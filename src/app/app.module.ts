@@ -2,16 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MaterializeModule } from 'angular2-materialize';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app.routing.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    MaterializeModule
+    AppRoutingModule
 
   ],
   providers: [],
