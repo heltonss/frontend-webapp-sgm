@@ -1,0 +1,12 @@
+$button-width:130px;
+$button-height:70px;
+.dashboard-menu {
+    &-button {
+        background: #fff;
+        width: $button-width;
+        height: $button-height;
+        min-width: $button-width;
+        max-height: $button-height;
+        vertical-align: middle
+    }
+}
