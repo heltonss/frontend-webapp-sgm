@@ -4,14 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MainModule } from 'app/main/main.module';
+import { OrcamentoComponent } from './orcamento/orcamento.component';
+import { OrcamentoModule } from './orcamento/orcamento.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    OrcamentoModule,
     MainModule,
     AppRoutingModule
 
