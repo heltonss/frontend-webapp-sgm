@@ -1,0 +1,21 @@
+$bt-height: 160px;
+$bt-width: 160px;
+.menu {
+    list-style-type: none;
+    &-nav {
+        margin: 22% 0 0 0;
+    }
+    &-li {
+        text-transform: uppercase
+    }
+    &-link {
+        width: $bt-width;
+        background: #222;
+        font-weight: bold;
+        color: rgb(230, 230, 230);
+    }
+    &-icon {
+        font-size: 2em;
+        padding: 15% 0 0 0;
+    }
+}
