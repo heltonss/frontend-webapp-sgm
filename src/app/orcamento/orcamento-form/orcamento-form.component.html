@@ -1,0 +1,136 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Orçamento Auto Service</h1>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <form action="" class="col-md-12">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="data">orçamento número:</label><br/>
+                <span>12345</span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="data">data de emissão</label>
+                <input type="date" class="form-control" id="data" placeholder="Email">
+            </div>
+        </div>
+        <fieldset>
+            <legend>Dados do Cliente</legend>
+            <div class="form-group col-md-6">
+                <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome completo" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">e-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="contato@provedor.com.br">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="email">Telefone</label>
+                <input type="tel" class="form-control" id="email" placeholder=" 11 1234-4678">
+            </div>
+            <legend>Endereço do Cliente</legend>
+            <div class="form-group col-md-6">
+                <label for="rua">Rua</label>
+                <input type="email" class="form-control" id="rua" placeholder="Email">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="data">Número</label>
+                <input type="number" class="form-control" id="data" placeholder="0">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="bairro" placeholder="Nome do bairro">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Insira a cidade">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep" placeholder="Insira o cep">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>dados do veiculo</legend>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group col-md-3">
+                        <label for="fabricante">Fabricante</label>
+                        <input list="fabricantes" class="form-control" name="fabricante">
+                        <datalist id="fabricantes">
+                                <option value="Volkswagem">
+                                <option value="Fiat">
+                                <option value="Chevrolet">
+                                <option value="Hiunday">
+                                <option value="Honda">
+                            </datalist>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="modelo">Modelo</label>
+                        <input list="fabricantes" class="form-control" name="fabricante">
+                        <datalist id="fabricantes">
+                                <option value="Volkswagem">
+                                <option value="Fiat">
+                                <option value="Chevrolet">
+                                <option value="Hiunday">
+                                <option value="Honda">
+                            </datalist>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="modelo">Ano de fabricação</label>
+                        <input type="text" class="form-control" id="modelo" placeholder="99/00">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="modelo">Kilometragem</label>
+                        <input type="text" class="form-control" id="modelo" placeholder="0 km">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="modelo">Placa</label>
+                        <input type="text" class="form-control" id="modelo" placeholder="XXX-XXXX">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>serviços</legend>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group col-md-1">
+                        <label for="quantidade">quantidade</label>
+                        <input type="number" class="form-control" id="quantidade" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" id="descricao" placeholder="descreva o serviço que será feito">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="quantidade">qtd unitário</label>
+                        <input type="text" class="form-control" id="quantidade" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="quantidade">Valor R$</label>
+                        <input type="text" class="form-control" id="quantidade" placeholder="0">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>informações gerais</legend>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea class="form-control" name="informacoes" rows="3"></textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="row btns-form">
+            <div class="col-md-12">
+                <div class="pull-right">
+                    <button class="btn btn-default btn-primary" type="submit"><span class="glyphicon glyphicon-print"></span> imprimir</button>
+                    <button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-print"></span> salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
