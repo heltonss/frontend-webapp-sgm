@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-orcamento-form',
@@ -6,10 +7,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
+  private form: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    this.createForm();
   }
 
+  createForm(): void {
+    this.form = this.formBuilder.group({
+      clientData: this.formBuilder.group({
+        name: [null],
+        email: [null],
+        tel: [null]
+      }),
+      clientAddress: this.formBuilder.group({
+        street: [''],
+        number: [''],
+        district: [''],
+        city: [''],
+        cep: ['']
+      }),
+      clientVehicle: this.formBuilder.group({
+        manufacturer: [''],
+        model: [''],
+        yearOfManufacturer: [''],
+        km: [''],
+        plate: ['']
+      }),
+      clientTasks: this.formBuilder.group({
+        description: [''],
+        price: ['']
+      }),
+      info: ['']
+    })
+  }
+
+  onSubmit(form: FormGroup) {
+    console.log(form.value);
+  }
 }
