@@ -11,6 +11,7 @@ describe('OrcamentoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+<<<<<<< HEAD
       declarations: [
         OrcamentoComponent,
         OrcamentoPrintComponent,
@@ -18,6 +19,12 @@ describe('OrcamentoComponent', () => {
        ],
       imports: [
         ReactiveFormsModule
+=======
+      declarations: [ 
+        OrcamentoComponent,
+        OrcamentoPrintComponent,
+        OrcamentoFormComponent
+>>>>>>> 6fcda9478f0bc53ef1a431bf5a0174f1f39cb920
       ]
     })
     .compileComponents();

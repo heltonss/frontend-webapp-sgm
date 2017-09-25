@@ -14,7 +14,7 @@ describe('DashboardComponent', () => {
         DashboardMenuComponent
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
