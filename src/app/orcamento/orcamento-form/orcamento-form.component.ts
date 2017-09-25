@@ -9,8 +9,8 @@ import { Task } from './../../shared/model/task';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
-  private form: FormGroup;
-  private tasks: Task[];
+  tasks: Task[];
+  form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -35,13 +35,13 @@ export class OrcamentoFormComponent implements OnInit {
       clientVehicle: this.formBuilder.group({
         manufacturer: [''],
         model: [''],
-        yearOfManufacturer: [''],
-        km: [''],
+        yearOfManufacturer: [null],
+        km: [null],
         plate: ['']
       }),
       clientTasks: this.formBuilder.group({
         description: [''],
-        price: ['']
+        price: [null]
       }),
       info: ['']
     })

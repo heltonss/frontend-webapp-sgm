@@ -1,12 +1,15 @@
-class Vehicle {
-    private name: string;
+export class Vehicle {
     private model: string;
     private manufacturer: string;
-    private yearManufactuer: number;
+    private yearManufacturer: number;
     private km: number;
-    private plate: number;
+    private plate: string;
 
-    constructor() {
-
+    constructor(model: string, manufacturer: string, yearManufacturer: number, km: number, plate: string) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.yearManufacturer = yearManufacturer;
+        this.km = km;
+        this.plate = plate;
     }
 }
