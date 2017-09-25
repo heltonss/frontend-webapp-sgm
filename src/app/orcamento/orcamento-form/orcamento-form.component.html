@@ -28,26 +28,26 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="email">Telefone</label>
-                <input formControlName="tel" type="tel" class="form-control" id="email" placeholder=" 11 1234-4678">
+                <input formControlName="tel" type="tel" class="form-control" id="tel" placeholder=" 11 1234-4678">
             </div>
         </fieldset>
         <fieldset formGroupName="clientAddress">
             <legend>endereço do Cliente</legend>
             <div class="form-group col-md-6">
-                <label for="rua">Rua</label>
-                <input formControlName="street" type="text" class="form-control" id="rua" placeholder="Rua">
+                <label for="strett">Rua</label>
+                <input formControlName="street" type="text" class="form-control" id="street" placeholder="Rua">
             </div>
             <div class="form-group col-md-1">
-                <label for="data">Número</label>
-                <input formControlName="number" type="number" class="form-control" id="data" placeholder="0">
+                <label for="number">Número</label>
+                <input formControlName="number" type="number" class="form-control" id="number" placeholder="0">
             </div>
             <div class="form-group col-md-3">
-                <label for="bairro">Bairro</label>
-                <input formControlName="district" type="text" class="form-control" id="bairro" placeholder="Nome do bairro">
+                <label for="district">Bairro</label>
+                <input formControlName="district" type="text" class="form-control" id="district" placeholder="Nome do bairro">
             </div>
             <div class="form-group col-md-3">
-                <label for="cidade">Cidade</label>
-                <input formControlName="city" type="text" class="form-control" id="cidade" placeholder="Insira a cidade">
+                <label for="city">Cidade</label>
+                <input formControlName="city" type="text" class="form-control" id="city" placeholder="Insira a cidade">
             </div>
             <div class="form-group col-md-3">
                 <label for="cep">CEP</label>
@@ -60,8 +60,8 @@
                 <div class="col-md-12">
                     <div class="form-group col-md-3">
                         <label for="fabricante">Fabricante</label>
-                        <input list="fabricantes" class="form-control" formControlName="manufacturer">
-                        <datalist id="fabricantes">
+                        <input list="manufacturer" id="manufacturer" class="form-control" formControlName="manufacturer">
+                        <datalist id="manufactures">
                             <option value="Volkswagem">
                                 <option value="Fiat">
                                     <option value="Chevrolet">
@@ -71,8 +71,8 @@
                     </div>
                     <div class="form-group col-md-3">
                         <label for="modelo">Modelo</label>
-                        <input list="fabricantes" class="form-control" formControlName="model">
-                        <datalist id="fabricantes">
+                        <input list="model" class="form-control" formControlName="model">
+                        <datalist id="model">
                             <option value="Volkswagem">
                                 <option value="Fiat">
                                     <option value="Chevrolet">
@@ -82,11 +82,11 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="yearManufacturer">Ano de fabricação</label>
-                        <input formControlName="yearOfManufacturer" type="text" class="form-control" id="yearManufacturer" placeholder="99/00">
+                        <input formControlName="yearOfManufacturer" type="number" class="form-control" id="yearOfManufacturer" placeholder="99/00">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="km">Kilometragem</label>
-                        <input  formControlName="km" type="text" class="form-control" id="km" placeholder="0 km">
+                        <input  formControlName="km" type="number" class="form-control" id="km" placeholder="0 km">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="plate">Placa</label>
@@ -104,8 +104,8 @@
                         <input  formControlName="description" type="text" class="form-control" id="description" placeholder="descreva o serviço que será feito">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="quantity">Valor R$</label>
-                        <input  formControlName="price" type="text" class="form-control" id="quantity" placeholder="0">
+                        <label for="price">Valor R$</label>
+                        <input  formControlName="price" type="text" class="form-control" id="price" placeholder="0">
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
             <legend>informações gerais</legend>
             <div class="row">
                 <div class="col-md-12">
-                    <textarea  formControlName="info" class="form-control" name="informacoes" rows="3"></textarea>
+                    <textarea  formControlName="info" id="info" class="form-control" name="informacoes" rows="3"></textarea>
                 </div>
             </div>
         </fieldset>

@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OrcamentoComponent } from './orcamento.component';
 import { OrcamentoPrintComponent } from './orcamento-print/orcamento-print.component';
 import { OrcamentoFormComponent } from './orcamento-form/orcamento-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('OrcamentoComponent', () => {
   let component: OrcamentoComponent;
@@ -10,13 +11,16 @@ describe('OrcamentoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      imports: [
+        ReactiveFormsModule
+      ],
+      declarations: [
         OrcamentoComponent,
         OrcamentoPrintComponent,
         OrcamentoFormComponent
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
-  private form: FormGroup;
+  form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -32,13 +32,13 @@ export class OrcamentoFormComponent implements OnInit {
       clientVehicle: this.formBuilder.group({
         manufacturer: [''],
         model: [''],
-        yearOfManufacturer: [''],
-        km: [''],
+        yearOfManufacturer: [null],
+        km: [null],
         plate: ['']
       }),
       clientTasks: this.formBuilder.group({
         description: [''],
-        price: ['']
+        price: [null]
       }),
       info: ['']
     })

@@ -9,7 +9,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
         DashboardComponent,
         DashboardMenuComponent
        ]
