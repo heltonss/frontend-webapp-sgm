@@ -1,116 +1,135 @@
 <div class="row">
-    <div class="col-md-12 text-center">
-        <h1>Orçamento Auto Service</h1>
-        <hr>
-    </div>
+  <div class="col-md-12 text-center">
+    <h1>Orçamento Auto Service</h1>
+    <hr>
+  </div>
 </div>
 <div class="row">
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="col-md-12">
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="data">orçamento número:</label><br/>
-                <span>12345</span>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="data">data de emissão</label>
-                <input type="date" class="form-control" id="data" placeholder="data">
-            </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="col-md-12">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="data">orçamento número:</label><br/>
+        <span>12345</span>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="data">data de emissão</label>
+        <input type="date" class="form-control" id="data" placeholder="data">
+      </div>
+    </div>
+    <fieldset formGroupName="clientData">
+      <legend>dados do Cliente</legend>
+      <div class="form-group col-md-6">
+        <label for="name">Nome Completo</label>
+        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome completo" required>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">e-mail</label>
+        <input formControlName="email" type="email" class="form-control" id="email" placeholder="contato@provedor.com.br">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="email">Telefone</label>
+        <input formControlName="tel" type="tel" class="form-control" id="email" placeholder=" 11 1234-4678">
+      </div>
+    </fieldset>
+    <fieldset formGroupName="clientAddress">
+      <legend>endereço do Cliente</legend>
+      <div class="form-group col-md-6">
+        <label for="rua">Rua</label>
+        <input formControlName="street" type="text" class="form-control" id="rua" placeholder="Rua">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="data">Número</label>
+        <input formControlName="number" type="number" class="form-control" id="data" placeholder="0">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="bairro">Bairro</label>
+        <input formControlName="district" type="text" class="form-control" id="bairro" placeholder="Nome do bairro">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="cidade">Cidade</label>
+        <input formControlName="city" type="text" class="form-control" id="cidade" placeholder="Insira a cidade">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="cep">CEP</label>
+        <input formControlName="cep" type="text" class="form-control" id="cep" placeholder="Insira o cep">
+      </div>
+    </fieldset>
+    <fieldset formGroupName="clientVehicle">
+      <legend>dados do veiculo</legend>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group col-md-3">
+            <label for="fabricante">Fabricante</label>
+            <input list="fabricantes" class="form-control" formControlName="manufacturer">
+            <datalist id="fabricantes">
+              <option value="Volkswagem">
+                <option value="Fiat">
+                  <option value="Chevrolet">
+                    <option value="Hiunday">
+                      <option value="Honda">
+            </datalist>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="modelo">Modelo</label>
+            <input list="fabricantes" class="form-control" formControlName="model">
+            <datalist id="fabricantes">
+              <option value="Volkswagem">
+                <option value="Fiat">
+                  <option value="Chevrolet">
+                    <option value="Hiunday">
+                      <option value="Honda">
+            </datalist>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="yearManufacturer">Ano de fabricação</label>
+            <input formControlName="yearOfManufacturer" type="text" class="form-control" id="yearManufacturer" placeholder="99/00">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="km">Kilometragem</label>
+            <input formControlName="km" type="text" class="form-control" id="km" placeholder="0 km">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="plate">Placa</label>
+            <input formControlName="plate" type="text" class="form-control" id="plate" placeholder="XXX-XXXX">
+          </div>
         </div>
-        <fieldset formGroupName="clientData">
-            <legend>dados do Cliente</legend>
-            <div class="form-group col-md-6">
-                <label for="name">Nome Completo</label>
-                <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome completo" required>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="email">e-mail</label>
-                <input formControlName="email" type="email" class="form-control" id="email" placeholder="contato@provedor.com.br">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="email">Telefone</label>
-                <input formControlName="tel" type="tel" class="form-control" id="email" placeholder=" 11 1234-4678">
-            </div>
-        </fieldset>
-        <fieldset formGroupName="clientAddress">
-            <legend>endereço do Cliente</legend>
-            <div class="form-group col-md-6">
-                <label for="rua">Rua</label>
-                <input formControlName="street" type="text" class="form-control" id="rua" placeholder="Rua">
-            </div>
-            <div class="form-group col-md-1">
-                <label for="data">Número</label>
-                <input formControlName="number" type="number" class="form-control" id="data" placeholder="0">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="bairro">Bairro</label>
-                <input formControlName="district" type="text" class="form-control" id="bairro" placeholder="Nome do bairro">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="cidade">Cidade</label>
-                <input formControlName="city" type="text" class="form-control" id="cidade" placeholder="Insira a cidade">
-            </div>
-            <div class="form-group col-md-3">
-                <label for="cep">CEP</label>
-                <input formControlName="cep" type="text" class="form-control" id="cep" placeholder="Insira o cep">
-            </div>
-        </fieldset>
-        <fieldset formGroupName="clientVehicle">
-            <legend>dados do veiculo</legend>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group col-md-3">
-                        <label for="fabricante">Fabricante</label>
-                        <input list="fabricantes" class="form-control" formControlName="manufacturer">
-                        <datalist id="fabricantes">
-                            <option value="Volkswagem">
-                                <option value="Fiat">
-                                    <option value="Chevrolet">
-                                        <option value="Hiunday">
-                                            <option value="Honda">
-                        </datalist>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="modelo">Modelo</label>
-                        <input list="fabricantes" class="form-control" formControlName="model">
-                        <datalist id="fabricantes">
-                            <option value="Volkswagem">
-                                <option value="Fiat">
-                                    <option value="Chevrolet">
-                                        <option value="Hiunday">
-                                            <option value="Honda">
-                        </datalist>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="yearManufacturer">Ano de fabricação</label>
-                        <input formControlName="yearOfManufacturer" type="text" class="form-control" id="yearManufacturer" placeholder="99/00">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="km">Kilometragem</label>
-                        <input  formControlName="km" type="text" class="form-control" id="km" placeholder="0 km">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="plate">Placa</label>
-                        <input  formControlName="plate" type="text" class="form-control" id="plate" placeholder="XXX-XXXX">
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset formGroupName="clientTasks">
-            <legend>serviços</legend>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group col-md-6">
-                        <label for="description">Descrição</label>
-                        <input  formControlName="description" type="text" class="form-control" id="description" placeholder="descreva o serviço que será feito">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="quantity">Valor R$</label>
-                        <input  formControlName="price" type="text" class="form-control" id="quantity" placeholder="0">
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-        <!-- <fieldset>
+      </div>
+    </fieldset>
+    <fieldset formGroupName="clientTasks">
+      <legend>serviços</legend>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group col-md-10">
+            <label for="description">Descrição</label>
+            <input formControlName="description" type="text" class="form-control" id="description" placeholder="descreva o serviço que será feito">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="quantity">Valor R$</label>
+            <input formControlName="price" type="text" class="form-control" id="quantity" placeholder="0">
+          </div>
+          <button type="button" class="btn btn-default pull-right">adcionar</button>
+        </div>
+      </div>
+      <div class=row>
+        <div class="col-md-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>servicos</th>
+                <th>valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Descricao dos servicos</td>
+                <td>0000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </fieldset>
+    <!-- <fieldset>
             <legend>serviços</legend>
             <div class="row">
                 <div class="col-md-12">
@@ -133,21 +152,21 @@
                 </div>
             </div>
         </fieldset> -->
-        <fieldset>
-            <legend>informações gerais</legend>
-            <div class="row">
-                <div class="col-md-12">
-                    <textarea  formControlName="info" class="form-control" name="informacoes" rows="3"></textarea>
-                </div>
-            </div>
-        </fieldset>
-        <div class="row btns-form">
-            <div class="col-md-12">
-                <div class="pull-right">
-                    <button class="btn btn-default btn-primary"><span class="glyphicon glyphicon-print"></span> imprimir</button>
-                    <button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-print"></span> salvar</button>
-                </div>
-            </div>
+    <fieldset>
+      <legend>informações gerais</legend>
+      <div class="row">
+        <div class="col-md-12">
+          <textarea formControlName="info" class="form-control" name="informacoes" rows="3"></textarea>
         </div>
-    </form>
+      </div>
+    </fieldset>
+    <div class="row btns-form">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <button class="btn btn-default btn-primary"><span class="glyphicon glyphicon-print"></span> imprimir</button>
+          <button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-print"></span> salvar</button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

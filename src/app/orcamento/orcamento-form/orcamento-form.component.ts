@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
+import { Task } from './../../shared/model/task';
+
 @Component({
   selector: 'app-orcamento-form',
   templateUrl: './orcamento-form.component.html',
@@ -8,8 +10,9 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class OrcamentoFormComponent implements OnInit {
   private form: FormGroup;
+  private tasks: Task[];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();
@@ -42,6 +45,12 @@ export class OrcamentoFormComponent implements OnInit {
       }),
       info: ['']
     })
+  }
+
+  addTasks(task: Task): Task[] {
+    this.tasks.push(task);
+    console.log(this.tasks[0]);
+    return this.tasks;
   }
 
   onSubmit(form: FormGroup) {

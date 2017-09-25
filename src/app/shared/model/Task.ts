@@ -1,4 +1,4 @@
-class Task {
+export class Task {
     private description: string;
     private price: string;
 
