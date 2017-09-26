@@ -4,7 +4,6 @@
         <hr>
     </div>
 </div>
-<pre>{{ form.value | json }}</pre>
 <div class="row">
     <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="col-md-12">
         <div class="row">
@@ -102,20 +101,20 @@
                 <div class="col-md-12">
                     <div class="form-group col-md-10">
                         <label for="description">Descrição</label>
-                        <input type="text" #description class="form-control" id="description" placeholder="descreva o serviço que será feito">
+                        <input maxlength="100" type="text" #description class="form-control" id="description" placeholder="descreva o serviço que será feito">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="price">Valor R$</label>
-                        <input type="number" #price class="form-control" id="price" placeholder="0">
+                        <input type="number" #price class="form-control" id="price" placeholder="R$ 0.00">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" (click)="addTasks(description.value, price.value)" class="btn btn-default pull-right">Adicionar</button>
+                    <button type="button" (click)="addTasks(description.value, price.value)" class="btn btn-default pull-right btnAdd">Adicionar</button>
                 </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table *ngIf="isHasTasks" class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Descrição</th>
@@ -125,7 +124,7 @@
                 <tbody formArrayName="clientTasks">
                     <tr *ngFor="let task of form.controls.clientTasks.controls, let i = index">
                         <!-- <p>{{ task | json }}</p> -->
-                        <td>{{ form.controls.clientTasks.controls[i].controls.description.value}}</td>
+                        <td class="orcamento-table-td">{{ form.controls.clientTasks.controls[i].controls.description.value}}</td>
                         <td>{{ form.controls.clientTasks.controls[i].controls.price.value }}</td>
                         <td>
                             <button type="button" class="btn btn-danger pull-right">excluir</button>

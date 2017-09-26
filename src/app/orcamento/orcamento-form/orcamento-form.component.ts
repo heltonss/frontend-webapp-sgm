@@ -11,6 +11,7 @@ import { Task } from './../../shared/model/task';
 export class OrcamentoFormComponent implements OnInit {
   tasks: Task[] = [];
   form: FormGroup;
+  isHasTasks = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -45,6 +46,7 @@ export class OrcamentoFormComponent implements OnInit {
   }
 
   addTasks(description: string, price: number) {
+    this.isHasTasks = true;
     const clientTasks: any = this.form.controls['clientTasks'];
     const newTask = this.addForFormBuilder(description, price);
     clientTasks.push(newTask);
