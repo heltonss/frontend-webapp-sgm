@@ -150,16 +150,4 @@ describe('OrcamentoFormComponent', () => {
     expect(component.addTasks).toBeDefined();
   });
 
-
-  // xit('should add tasks ', () => {
-  //   const result = component.addTasks(dataTask);
-  //   expect(result).toContain(dataTask);
-  // });
-
-  // xit('should return array of tasks', () => {
-  //   const result = component.addTasks(dataTask)
-  //   expect(result.length).toBeGreaterThan(0)
-  // })
-
-
 });

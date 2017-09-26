@@ -46,11 +46,11 @@ export class OrcamentoFormComponent implements OnInit {
 
   addTasks(description: string, price: number) {
     const clientTasks: any = this.form.controls['clientTasks'];
-    const newTask = this.add(description, price);
+    const newTask = this.addForFormBuilder(description, price);
     clientTasks.push(newTask);
   }
 
-  add(description: string, price: number): FormGroup {
+  addForFormBuilder(description: string, price: number): FormGroup {
     return this.formBuilder.group({
       description: description,
       price: price
