@@ -10,7 +10,7 @@ import { OrcamentoModule } from './orcamento/orcamento.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
