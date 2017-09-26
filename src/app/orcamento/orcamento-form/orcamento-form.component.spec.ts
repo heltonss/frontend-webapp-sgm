@@ -20,7 +20,9 @@ describe('OrcamentoFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [OrcamentoFormComponent],
-      imports: []
+      imports: [
+        ReactiveFormsModule
+      ]
     })
       .compileComponents();
   }));
@@ -142,7 +144,22 @@ describe('OrcamentoFormComponent', () => {
     expect(description.value).toBe(dataTask['description'])
     expect(parseFloat(price.value)).toEqual(dataTask['price'])
 
-
   }));
+
+  it('should define addTask', () => {
+    expect(component.addTasks).toBeDefined();
+  });
+
+
+  // xit('should add tasks ', () => {
+  //   const result = component.addTasks(dataTask);
+  //   expect(result).toContain(dataTask);
+  // });
+
+  // xit('should return array of tasks', () => {
+  //   const result = component.addTasks(dataTask)
+  //   expect(result.length).toBeGreaterThan(0)
+  // })
+
 
 });

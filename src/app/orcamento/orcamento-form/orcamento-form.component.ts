@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 
 import { Task } from './../../shared/model/task';
 
@@ -9,7 +9,7 @@ import { Task } from './../../shared/model/task';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
-  tasks: Task[];
+  tasks: Task[] = [];
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
@@ -39,18 +39,22 @@ export class OrcamentoFormComponent implements OnInit {
         km: [null],
         plate: ['']
       }),
-      clientTasks: this.formBuilder.group({
-        description: [''],
-        price: [null]
-      }),
+      clientTasks: this.formBuilder.array([]),
       info: ['']
-    })
+    });
   }
 
-  addTasks(task: Task): Task[] {
-    this.tasks.push(task);
-    console.log(this.tasks[0]);
-    return this.tasks;
+  addTasks(description: string, price: number) {
+    const clientTasks: any = this.form.controls['clientTasks'];
+    const newTask = this.add(description, price);
+    clientTasks.push(newTask);
+  }
+
+  add(description: string, price: number): FormGroup {
+    return this.formBuilder.group({
+      description: description,
+      price: price
+    })
   }
 
   onSubmit(form: FormGroup) {

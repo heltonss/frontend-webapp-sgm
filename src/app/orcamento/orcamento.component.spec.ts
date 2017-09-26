@@ -11,7 +11,7 @@ describe('OrcamentoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-]      declarations: [
+      declarations: [
         OrcamentoComponent,
         OrcamentoPrintComponent,
         OrcamentoFormComponent
