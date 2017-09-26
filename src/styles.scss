@@ -8,3 +8,30 @@ body{
 .gi-3x{font-size: 3rem;}
 .gi-4x{font-size: 4rem;}
 .gi-5x{font-size: 5rem;}
+
+
+// orcamento print
+@media only print and (max-width: 640px) {
+    span,p{
+      font-size: 12pt
+    }
+    div[class|="row"]{
+      padding:1% 0;
+    }
+    .print-title{
+      font-size: 24px
+    }
+    th{
+      text-transform: uppercase;
+    }
+    .print-background-title{
+      padding:2px 0 !important;
+      background-color:rgba(0,0,0,0.1) !important;
+      -webkit-print-color-adjust: exact;
+    }
+    .print-signature{
+      margin-top: 25px
+    }
+  
+  }
+  

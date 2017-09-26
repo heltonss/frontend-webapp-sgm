@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OrcamentoComponent } from './orcamento.component';
 import { OrcamentoFormComponent } from './orcamento-form/orcamento-form.component';
+import { OrcamentoPrintComponent } from 'app/orcamento/orcamento-print/orcamento-print.component';
 
 const route: Routes = [
   {
@@ -14,7 +15,11 @@ const route: Routes = [
         path: '',
         component: OrcamentoFormComponent
       }
-    ]
+    ],
+  },
+  {
+    path: 'print',
+    component: OrcamentoPrintComponent
   }
 ];
 

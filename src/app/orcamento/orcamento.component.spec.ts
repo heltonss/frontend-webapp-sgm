@@ -4,6 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OrcamentoComponent } from './orcamento.component';
 import { OrcamentoPrintComponent } from './orcamento-print/orcamento-print.component';
 import { OrcamentoFormComponent } from './orcamento-form/orcamento-form.component';
+import { CurrencybrPipe } from './../shared/currencybr.pipe';
 
 describe('OrcamentoComponent', () => {
   let component: OrcamentoComponent;
@@ -14,7 +15,8 @@ describe('OrcamentoComponent', () => {
       declarations: [
         OrcamentoComponent,
         OrcamentoPrintComponent,
-        OrcamentoFormComponent
+        OrcamentoFormComponent,
+        CurrencybrPipe
       ],
       imports: [
         ReactiveFormsModule

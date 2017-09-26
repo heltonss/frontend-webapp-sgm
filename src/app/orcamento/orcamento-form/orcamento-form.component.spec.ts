@@ -7,6 +7,7 @@ import { User } from './../../shared/model/user';
 import { Address } from './../../shared/model/address';
 import { Vehicle } from './../../shared/model/vehicle';
 import { Task } from './../../shared/model/Task';
+import { CurrencybrPipe } from './../../shared/currencybr.pipe';
 
 describe('OrcamentoFormComponent', () => {
   let component: OrcamentoFormComponent;
@@ -19,7 +20,10 @@ describe('OrcamentoFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [OrcamentoFormComponent],
+      declarations: [
+        OrcamentoFormComponent,
+        CurrencybrPipe
+      ],
       imports: [
         ReactiveFormsModule
       ]
@@ -149,4 +153,14 @@ describe('OrcamentoFormComponent', () => {
   it('should define addTask', () => {
     expect(component.addTasks).toBeDefined();
   });
+
+  it('should to be defined a method of task', () => {
+    expect(component.deleteTask).toBeDefined();
+  });
+
+  xit('should delete a task', () => {
+    const btnDelete = fixture.debugElement.query(By.css('.btnDelete'));
+    // btnDelete.triggerEventHandler('click', );
+  });
+
 });

@@ -9,7 +9,7 @@ import { Task } from './../../shared/model/task';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
-  tasks: Task[] = [];
+  tasks: any[] = [];
   form: FormGroup;
   isHasTasks = false;
 
@@ -40,23 +40,25 @@ export class OrcamentoFormComponent implements OnInit {
         km: [null],
         plate: ['']
       }),
-      clientTasks: this.formBuilder.array([]),
+      clientTasks: [this.tasks],
       info: ['']
     });
   }
 
   addTasks(description: string, price: number) {
     this.isHasTasks = true;
-    const clientTasks: any = this.form.controls['clientTasks'];
-    const newTask = this.addForFormBuilder(description, price);
-    clientTasks.push(newTask);
-  }
-
-  addForFormBuilder(description: string, price: number): FormGroup {
-    return this.formBuilder.group({
+    const task = {
       description: description,
       price: price
-    })
+    }
+
+    return this.tasks.push(task)
+  }
+
+
+
+  deleteTask(id: number) {
+    this.tasks.splice(id);
   }
 
   onSubmit(form: FormGroup) {
