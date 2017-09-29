@@ -1,6 +1,7 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DataService } from 'app/shared/data.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,7 +9,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule ],
+      providers: [ DataService ]
     }).compileComponents();
   }));
 

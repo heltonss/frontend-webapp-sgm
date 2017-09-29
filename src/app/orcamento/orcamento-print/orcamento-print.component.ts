@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'app/shared/data.service';
 
 @Component({
   selector: 'app-orcamento-print',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orcamento-print.component.scss']
 })
 export class OrcamentoPrintComponent implements OnInit {
+  public orcamento: any;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.getOrcamento();
+  }
+
+  getOrcamento() {
+    this.orcamento = this.dataService.serviceData.value;
+  }
+
+  orcamentoPrint(): void {
+    window.print();
   }
 
 }

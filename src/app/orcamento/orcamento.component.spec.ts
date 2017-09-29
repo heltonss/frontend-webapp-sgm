@@ -5,6 +5,8 @@ import { OrcamentoComponent } from './orcamento.component';
 import { OrcamentoPrintComponent } from './orcamento-print/orcamento-print.component';
 import { OrcamentoFormComponent } from './orcamento-form/orcamento-form.component';
 import { CurrencybrPipe } from './../shared/currencybr.pipe';
+import { DataService } from './../shared/data.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OrcamentoComponent', () => {
   let component: OrcamentoComponent;
@@ -19,8 +21,10 @@ describe('OrcamentoComponent', () => {
         CurrencybrPipe
       ],
       imports: [
-        ReactiveFormsModule
-      ]
+        ReactiveFormsModule,
+        RouterTestingModule
+      ],
+      providers: [DataService]
     })
       .compileComponents();
   }));

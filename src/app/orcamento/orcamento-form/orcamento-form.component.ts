@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 
 import { Task } from './../../shared/model/task';
+import { DataService } from 'app/shared/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orcamento-form',
@@ -13,7 +15,7 @@ export class OrcamentoFormComponent implements OnInit {
   products = [];
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
     this.createForm();
@@ -81,7 +83,9 @@ export class OrcamentoFormComponent implements OnInit {
     return this.products.length > 0;
   }
 
-  onSubmit(form: FormGroup) {
-    console.log(form.value);
+  onSubmit(orcamento: FormGroup) {
+    console.log(orcamento.value);
+    this.dataService.serviceData = orcamento;
+    this.router.navigate(['/print'])
   }
 }

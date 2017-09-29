@@ -32,7 +32,7 @@
   <h3 class="text-uppercase print-background-title orcamento-print-title">dados do cliente <span class="text-uppercase text-right orcamento-print-title pull-right">nº do orçamento: <span class="text-uppercase orcamento-print-title"> 123456 </span></span>
   </h3>
   <div class="col-xs-4 col-md-3">
-    <span>nome: </span><span>nome do cliente</span><br/>
+    <span>nome: </span><span>{{ orcamento.clientData.name }}</span><br/>
     <span>rg: </span><span>42.321.365</span><br/>
     <span>cpf: </span><span>123.456.789</span><br/>
     <span>Telfone: </span><span>(xx) 12345-1234</span><br/>
@@ -157,3 +157,4 @@
     __________________________________________________________<br/> assinatura
   </div>
 </div>
+<button (click)="orcamentoPrint()" class="btn btn-block btn-primary btnPrint center-block" ><span class="glyphicon glyphicon-print"></span> imprimir</button>

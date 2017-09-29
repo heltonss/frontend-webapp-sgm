@@ -2,12 +2,15 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { Router, RouterModule } from '@angular/router';
 import { OrcamentoFormComponent } from './orcamento-form.component';
 import { User } from './../../shared/model/user';
 import { Address } from './../../shared/model/address';
 import { Vehicle } from './../../shared/model/vehicle';
 import { Task } from './../../shared/model/Task';
 import { CurrencybrPipe } from './../../shared/currencybr.pipe';
+import { DataService } from 'app/shared/data.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OrcamentoFormComponent', () => {
   let component: OrcamentoFormComponent;
@@ -25,8 +28,10 @@ describe('OrcamentoFormComponent', () => {
         CurrencybrPipe
       ],
       imports: [
-        ReactiveFormsModule
-      ]
+        ReactiveFormsModule,
+        RouterTestingModule
+      ],
+      providers: [DataService]
     })
       .compileComponents();
   }));
@@ -34,8 +39,8 @@ describe('OrcamentoFormComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OrcamentoFormComponent);
     component = fixture.componentInstance;
-    // fixture.detectChanges();
-    component = new OrcamentoFormComponent(new FormBuilder())
+    fixture.detectChanges();
+    // component = new OrcamentoFormComponent(new FormBuilder(), new DataService());
   });
 
   it('should be created', () => {
@@ -126,9 +131,7 @@ describe('OrcamentoFormComponent', () => {
     info.value = 'Descrição';
     info.dispatchEvent(new Event('input'));
 
-    const btnCadastrar = fixture.debugElement.query(By.css('.btnPrint'));
-    btnCadastrar.triggerEventHandler('click', null);
-
+   
     expect(name.value).toBe(dataClient['name']);
     expect(email.value).toBe(dataClient['email']);
     expect(tel.value).toBe(dataClient['phone']);

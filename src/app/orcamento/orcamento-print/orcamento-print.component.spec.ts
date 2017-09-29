@@ -1,5 +1,7 @@
-import { async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OrcamentoPrintComponent } from './orcamento-print.component';
+import { By } from '@angular/platform-browser';
+import { DataService } from 'app/shared/data.service';
 
 describe('OrcamentoPrintComponent', () => {
   let component: OrcamentoPrintComponent;
@@ -7,9 +9,10 @@ describe('OrcamentoPrintComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrcamentoPrintComponent ]
+      declarations: [OrcamentoPrintComponent],
+      providers: [DataService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,4 +24,7 @@ describe('OrcamentoPrintComponent', () => {
   // it('should be created', () => {
   //   expect(component).toBeTruthy();
   // });
+
+
+
 });
