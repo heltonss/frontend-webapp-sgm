@@ -9,9 +9,9 @@ import { Task } from './../../shared/model/task';
   styleUrls: ['./orcamento-form.component.scss']
 })
 export class OrcamentoFormComponent implements OnInit {
-  tasks: any[] = [];
+  tasks: Task[] = [];
+  products = [];
   form: FormGroup;
-  isHasTasks = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -41,13 +41,13 @@ export class OrcamentoFormComponent implements OnInit {
         plate: ['']
       }),
       clientTasks: [this.tasks],
+      products: [this.products],
       info: ['']
     });
   }
 
   addTasks(description: string, price: number) {
-    this.isHasTasks = true;
-    const task = {
+    const task: any = {
       description: description,
       price: price
     }
@@ -55,10 +55,30 @@ export class OrcamentoFormComponent implements OnInit {
     return this.tasks.push(task)
   }
 
+  deleteTask(id: number): Task[] {
+    return this.tasks.splice(id);
+  }
 
+  addProduct(quantity: number, description: string, priceUnit: number) {
+    const product: any = {
+      quantity: quantity,
+      description: description,
+      priceUnit: priceUnit
+    }
 
-  deleteTask(id: number) {
-    this.tasks.splice(id);
+    return this.products.push(product)
+  }
+
+  deleteProduct(id: number): any[] {
+    return this.products.splice(id);
+  }
+
+  isShowTableTasks(): boolean {
+    return this.tasks.length > 0;
+  }
+
+  isShowTableProducts(): boolean {
+    return this.products.length > 0;
   }
 
   onSubmit(form: FormGroup) {

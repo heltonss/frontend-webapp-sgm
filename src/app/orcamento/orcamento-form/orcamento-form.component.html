@@ -114,7 +114,7 @@
                     <button type="button" (click)="addTasks(description.value, price.value)" class="btn btn-default pull-right btnAdd">Adicionar</button>
                 </div>
             </div>
-            <table *ngIf="isHasTasks" class="table table-striped table-hover">
+            <table *ngIf="isShowTableTasks()" class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Descrição</th>
@@ -123,7 +123,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let task of form.controls.clientTasks.value, let i = index">
-                        <!-- <p>{{ task | json }}</p> -->
                         <td class="orcamento-table-td">{{ task.description }}</td>
                         <td>{{ task.price | currencybr }}</td>
                         <td>
@@ -133,29 +132,55 @@
                 </tbody>
             </table>
         </fieldset>
-        <!-- <fieldset>
-            <legend>serviços</legend>
+        <fieldset>
+            <legend>peças e acessórios</legend>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group col-md-1">
                         <label for="quantidade">quantidade</label>
-                        <input type="number" class="form-control" id="quantidade" placeholder="0">
+                        <input min="0" #qtd type="number" class="form-control" id="quantidade" placeholder="0">
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-9">
                         <label for="descricao">Descrição</label>
-                        <input type="text" class="form-control" id="descricao" placeholder="descreva o serviço que será feito">
+                        <input #productDescription type="text" class="form-control" id="descricao" placeholder="descreva o serviço que será feito">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="quantidade">qtd unitário</label>
-                        <input type="text" class="form-control" id="quantidade" placeholder="0">
+                        <label for="priceUnit">Valor unitário R$</label>
+                        <input #priceUnit type="text" class="form-control" id="priceUnit" placeholder="0">
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="quantidade">Valor R$</label>
-                        <input type="text" class="form-control" id="quantidade" placeholder="0">
-                    </div>
+                    <!-- <div class="form-group col-md-2">
+                        <label for="priceTotal">Valor R$</label>
+                        <input #priceTotal type="text" class="form-control" id="priceTotal" placeholder="0">
+                    </div> -->
                 </div>
             </div>
-        </fieldset> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" (click)="addProduct(qtd.value, productDescription.value, priceUnit.value)" class="btn btn-default pull-right btnAdd">Adicionar</button>
+                </div>
+            </div>
+            <table *ngIf="isShowTableProducts()" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>quantidade</th>
+                        <th>descrição</th>
+                        <th>valor unitário</th>
+                        <th>valor total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of form.controls.products.value, let indexProducts = index">
+                        <td class="orcamento-table-td">{{ product.quantity }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.priceUnit | currencybr }}</td>
+                        <td>{{ product.quantity * product.priceUnit | currencybr }}</td>
+                        <td>
+                            <button (click)="deleteProduct(indexProducts)" type="button" class="btn btn-danger pull-right btnDelete">excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
         <fieldset>
             <legend>informações gerais</legend>
             <div class="row">

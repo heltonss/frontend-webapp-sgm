@@ -154,13 +154,68 @@ describe('OrcamentoFormComponent', () => {
     expect(component.addTasks).toBeDefined();
   });
 
+  it('should add a task', () => {
+    const task = {
+      description: 'descrição',
+      price: 1000
+    }
+    const result: any = component.addTasks(task.description, task.price);
+    expect(result).toBeGreaterThan(0);
+  });
+
+  it('should delete a task', () => {
+    const task = {
+      description: 'descrição',
+      price: 1000
+    }
+    component.addTasks(task.description, task.price);
+    const result = component.deleteTask(1);
+
+    expect(result.length).toEqual(0);
+  });
+
   it('should to be defined a method of task', () => {
     expect(component.deleteTask).toBeDefined();
   });
 
-  xit('should delete a task', () => {
-    const btnDelete = fixture.debugElement.query(By.css('.btnDelete'));
-    // btnDelete.triggerEventHandler('click', );
+  it('should define the method addProduct', () => {
+    expect(component.addProduct).toBeDefined();
+  });
+
+  it('should define the method deleteProduct', () => {
+    expect(component.deleteProduct).toBeDefined();
+  });
+
+
+  it('should add a product', () => {
+    const product = {
+      qtd: 2,
+      description: 'description',
+      valueUnit: 10
+    }
+    const result: any = component.addProduct(product.qtd, product.description, product.valueUnit);
+    expect(result).toBeGreaterThan(0);
+  });
+
+  it('should delete a product', () => {
+    const product = {
+      qtd: 2,
+      description: 'description',
+      valueUnit: 10
+    }
+    const result = component.deleteProduct(1);
+
+    expect(result.length).toEqual(0);
+  });
+
+  it('should return a boolean of isShowTableTasks', () => {
+    const result = component.isShowTableTasks()
+    expect(result).toBeFalsy();
+  });
+
+  it('should return a boolean of isShowTableProducts', () => {
+    const result = component.isShowTableProducts();
+    expect(result).toBeFalsy();
   });
 
 });
