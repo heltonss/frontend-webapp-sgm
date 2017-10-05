@@ -16,7 +16,7 @@ describe('OrcamentoFormComponent', () => {
   let component: OrcamentoFormComponent;
   let fixture: ComponentFixture<OrcamentoFormComponent>;
 
-  const dataClient = new User('Helton', 'souza silveira', '123.456.789-10', 'helton@heltonsouza.com.br', '11 1111-1111');
+  const dataClient = new User('Helton', 'souza silveira', '123.456.789-10', 'helton@heltonsouza.com.br', '11 1111-1111', '99 99999-9999');
   const dataAddress = new Address('dos sonhos', '100', 'District', 'City', '00000-000', 'SP');
   const dataVehicle = new Vehicle('Gol', 'Volkswagem', 2010, 1000, 'AAA 1234')
   const dataTask = new Task('Description', 2500)
@@ -131,7 +131,6 @@ describe('OrcamentoFormComponent', () => {
     info.value = 'Descrição';
     info.dispatchEvent(new Event('input'));
 
-   
     expect(name.value).toBe(dataClient['name']);
     expect(email.value).toBe(dataClient['email']);
     expect(tel.value).toBe(dataClient['phone']);

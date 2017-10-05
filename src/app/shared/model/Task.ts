@@ -1,6 +1,6 @@
 export class Task {
-    private description: string;
-    private price: number;
+    public description: string;
+    public price: number;
 
     constructor(description: string, price: number) {
         this.description = description;

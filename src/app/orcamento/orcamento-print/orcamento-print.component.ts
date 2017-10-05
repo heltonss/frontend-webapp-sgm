@@ -16,7 +16,7 @@ export class OrcamentoPrintComponent implements OnInit {
   }
 
   getOrcamento() {
-    this.orcamento = this.dataService.serviceData.value;
+    // this.orcamento = this.dataService.serviceData.value;
   }
 
   orcamentoPrint(): void {

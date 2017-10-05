@@ -1,160 +1,159 @@
-<div class="row print-background-title">
-  <div class="col-xs-12 col-md-12 text-center ">
-    <h3 class="text-uppercase">Orçamento Auto Service</h3>
-  </div>
-</div>
-<div class="row">
-  <div class="text-center">
-    <span class="text-uppercase orcamento-print-info">
-        não é documento fiscal - não é válido como recibo e como garantaia de mercadoria -não comprova pagamento
-    </span>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-4">
-    <img class="img-responsive" src="assets/img/logoprint.jpg" alt="logotipo autoservice">
-  </div>
-  <div class="col-xs-4">
-    <span class="text-uppercase"><strong>auto service cotia</strong></span><br/>
-    <span>rua: </span><span>Francisco Alves, 475</span><br/>
-    <span>bairro: </span><span>Mirante da Mata</span><br/>
-    <span>cep: </span><span>06720-060</span><br/>
-    <span>Cotia - São Paulo - SP</span>
-  </div>
-  <div class="col-sx-4">
-    <span class="text-uppercase"><strong>contato</strong></span><br/>
-    <span>rádio: </span><span>35*58*52590</span><br/>
-    <span>celular: </span><span>Nextel 8253 - 2905 </span><br/>
-    <span>celular: </span><span>Tim 98207-5165 </span><br/>
-  </div>
-</div>
-<div class="row">
-  <h3 class="text-uppercase print-background-title orcamento-print-title">dados do cliente <span class="text-uppercase text-right orcamento-print-title pull-right">nº do orçamento: <span class="text-uppercase orcamento-print-title"> 123456 </span></span>
-  </h3>
-  <div class="col-xs-4 col-md-3">
-    <span>nome: </span><span>{{ orcamento.clientData.name }}</span><br/>
-    <span>rg: </span><span>42.321.365</span><br/>
-    <span>cpf: </span><span>123.456.789</span><br/>
-    <span>Telfone: </span><span>(xx) 12345-1234</span><br/>
-    <span>Celular: </span><span>(xx) 12345-1234</span><br/>
-    <span>email: </span><span>contato@contato.com.br</span><br/>
-  </div>
-  <div class="col-xs-4 col-md-3">
-    <span>rua: </span><span>nome do cliente</span><span>, n </span>123<br/>
-    <span>cep: </span><span>06720-060</span><br/>
-    <span>bairro: </span><span>Nome do bairro</span><br/>
-    <span>cidade: </span><span>Nome do cidade</span><span> - SP</span><br/>
-  </div>
-  <div class="col-xs-4 col-md-4">
-    <span>data de emissão: </span><span> 21/07/2017 </span><br/>
-    <span>validade:</span><span> 30 dias</span><br/>
-    <span>tipo movimento: </span><span>prestação de serviços</span><br/>
-    <span>atendimento: </span><span>Anderson souza silveira</span>
-  </div>
-</div>
-<!-- <div class="row">
-  <div class="col-xs-12 col-md-12">
-    <h3  class="text-uppercase text-right print-title">nº do orçamento: <span class="text-uppercase print-title"> 123456 </span></h3>
-  </div>
-</div>  -->
-<div class="row">
-  <h3 class="text-uppercase print-background-title orcamento-print-title">prestação de serviços</h3>
-  <table class="table table-responsive table-bordered table-condensed">
-    <tr>
-      <th>descrição do serviço</th>
-      <th>valor R$</th>
-      <th>Valor total R$</th>
-    </tr>
-    <tr>
-      <td>troca de oleo</td>
-      <td>100,00</td>
-      <td class="text-right">100</td>
-    </tr>
-    <tr>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td colspan="2" class="text-uppercase">valor total da prestação de serviços</td>
-      <td class="text-right">R$ 140</td>
-    </tr>
-
-  </table>
-</div>
-<div class="row">
-  <h3 class="text-uppercase print-background-title orcamento-print-title">peças e acessórios</h3>
-  <table class="table table-responsive table-bordered table-condensed">
-    <tr>
-      <th>qtd</th>
-      <th>descrição das peças</th>
-      <th>Valor unitário R$</th>
-      <th>Valor total R$</th>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Óleo 15w40 </td>
-      <td>35,00</td>
-      <td class="text-right">140,00</td>
-    </tr>
-    <tr>
-      <td colspan="4"></td>
-    </tr>
-    <tr>
-      <td colspan="3" class="text-uppercase">valor total de peças e acessórios</td>
-      <td class="text-right">R$ 140</td>
-    </tr>
-  </table>
-</div>
-<div class="row">
-  <h3 class="text-center text-uppercase print-background-title  orcamento-print-title">observações gerais</h3>
-  <div class="col-xs-12 col-md-12">
-    <small>observações: os valores contidos neste orçamento podem sofrer alteraç~eos, após as desmontagem do veículo</small><br/>
-    <small>as peças instaladas após autorização deste orçamento mediante assinatura não sofrerão alteração na mão de obra já acordada</small>
-    <p></p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-5 col-xs-5">
-    <h4>formas de pagamento</h4>
-    <div class="checkbox">
-      <label>
-        <input class="print-checkbox" type="checkbox">cartão de crédito
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input class="print-checkbox" type="checkbox"> cartão de débito
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input class="print-checkbox" type="checkbox"> dinheiro
-      </label>
+<div class="container">
+  <div class="row print-background-title">
+    <div class="col-xs-12 col-md-12 text-center ">
+      <h3 class="text-uppercase">Orçamento Auto Service</h3>
     </div>
   </div>
-  <div class="col-md-4 col-xs-6 pull-right">
-    <table class="table table-bordered table-responsive">
+  <div class="row">
+    <div class="text-center">
+      <span class="text-uppercase orcamento-print-info">
+        não é documento fiscal - não é válido como recibo e como garantia de mercadoria -não comprova pagamento
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <img class="img-responsive" src="assets/img/logoprint.jpg" alt="logotipo autoservice">
+    </div>
+    <div class="col-xs-4">
+      <span class="text-uppercase"><strong>auto service cotia</strong></span><br/>
+      <span>rua: </span><span>Francisco Alves, 475</span><br/>
+      <span>bairro: </span><span>Mirante da Mata</span><br/>
+      <span>cep: </span><span>06720-060</span><br/>
+      <span>Cotia - São Paulo - SP</span>
+    </div>
+    <div class="col-sx-4">
+      <span class="text-uppercase"><strong>contato</strong></span><br/>
+      <span>rádio: </span><span>35*58*52590</span><br/>
+      <span>celular: </span><span>Nextel 8253 - 2905 </span><br/>
+      <span>celular: </span><span>Tim 98207-5165 </span><br/>
+    </div>
+  </div>
+  <div class="row">
+    <h3 class="text-uppercase print-background-title orcamento-print-title">dados do cliente <span class="text-uppercase text-right orcamento-print-title pull-right">nº do orçamento: <span class="text-uppercase orcamento-print-title"> 123456 </span></span>
+    </h3>
+    <div class="col-xs-4 col-md-3">
+      <span>nome: </span><span class="name">{{ orcamento?.clientData.name }}</span><br/>
+      <span>cpf: </span><span class="cpf">{{ orcamento?.clientData.cpf }}</span><br/>
+      <span>Telfone: </span><span class="tel">{{ orcamento?.clientData.phone }}</span><br/>
+      <span>Celular: </span><span class="cel">{{ orcamento?.clientData.cellphone }}</span><br/>
+      <span>email: </span><span class="email">{{ orcamento?.clientData.email }}</span><br/>
+    </div>
+    <div class="col-xs-4 col-md-3">
+      <span>rua: </span><span class="street">{{ orcamento?.clientAddress.street }}</span><span>, n </span>{{ orcamento?.clientAddress.number }}<br/>
+      <span>cep: </span><span class="cep">{{ orcamento?.clientAddress.cep }}</span><br/>
+      <span>bairro: </span><span class="district">{{ orcamento?.clientAddress.district }}</span><br/>
+      <span>cidade: </span><span class="city">{{ orcamento?.clientAddress.city }}</span><span> - SP</span><br/>
+    </div>
+    <div class="col-xs-4 col-md-4">
+      <span>data de emissão: </span><span class="date"> {{ orcamento?.clientData.date }} </span><br/>
+      <span>validade:</span><span> 30 dias</span><br/>
+      <span>tipo movimento: </span><span>prestação de serviços</span><br/>
+      <span>atendimento: </span><span class="seller">Anderson souza silveira</span>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <h3  class="text-uppercase text-right print-title">nº do orçamento: <span class="text-uppercase print-title"> 123456 </span></h3>
+    </div>
+  </div>  -->
+  <div class="row">
+    <h3 class="text-uppercase print-background-title orcamento-print-title">prestação de serviços</h3>
+    <table class="table table-responsive table-bordered table-condensed">
       <tr>
-        <td>valor total da prestação de servços</td>
-        <td class="text-right">R$ 100,00</td>
+        <th>descrição do serviço</th>
+        <th>valor R$</th>
+      </tr>
+      <tr *ngFor="let task of orcamento?.clientTask">
+        <td class="taskDescription">{{ task.description }}</td>
+        <td class="taskPrice">{{ task.price }}</td>
       </tr>
       <tr>
-        <td>valor total peças e acessórios</td>
-        <td class="text-right">3</td>
+        <td colspan="3"></td>
       </tr>
       <tr>
-        <td>desconto</td>
-        <td class="text-right"><span class="glyphicon">%</span></td>
+        <td class="text-uppercase">valor total da prestação de serviços</td>
+        <td class="taskValueTotal text-right">R$ 140</td>
+      </tr>
+      
+    </table>
+  </div>
+  <div class="row">
+    <h3 class="text-uppercase print-background-title orcamento-print-title">peças e acessórios</h3>
+    <table class="table table-responsive table-bordered table-condensed">
+      <tr>
+        <th>qtd</th>
+        <th>descrição das peças</th>
+        <th>Valor unitário R$</th>
+        <th>Valor total R$</th>
       </tr>
       <tr>
-        <td>total geral R$</td>
-        <td class="text-right">1000</td>
+        <td class="productQuantity">{{ orcamento?.clientTask.description }}</td>
+        <td class="productDescription">Óleo 15w40 </td>
+        <td class="productPrice">35,00</td>
+        <td class="ProductsTotalPrice text-right">140,00</td>
+      </tr>
+      <tr>
+        <td colspan="4"></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="text-uppercase">valor total de peças e acessórios</td>
+        <td class="priceTotal text-right">R$ 140</td>
       </tr>
     </table>
   </div>
-</div>
-<div class="row">
-  <div class="pull-right text-center print-signature">
-    __________________________________________________________<br/> assinatura
+  <div class="row">
+    <h3 class="text-center text-uppercase print-background-title  orcamento-print-title">observações gerais</h3>
+    <div class="col-xs-12 col-md-12">
+      <small>observações: os valores contidos neste orçamento podem sofrer alteraç~eos, após as desmontagem do veículo</small><br/>
+      <small>as peças instaladas após autorização deste orçamento mediante assinatura não sofrerão alteração na mão de obra já acordada</small>
+      <p></p>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-md-5 col-xs-5">
+      <h4>formas de pagamento</h4>
+      <div class="checkbox">
+        <label>
+          <input class="print-checkbox" type="checkbox">cartão de crédito
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="print-checkbox" type="checkbox"> cartão de débito
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="print-checkbox" type="checkbox"> dinheiro
+        </label>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-6 pull-right">
+      <table class="table table-bordered table-responsive">
+        <tr>
+          <td>valor total da prestação de servços</td>
+          <td class="text-right">R$ 100,00</td>
+        </tr>
+        <tr>
+          <td>valor total peças e acessórios</td>
+          <td class="text-right">3</td>
+        </tr>
+        <tr>
+          <td>desconto</td>
+          <td class="text-right"><span class="glyphicon">%</span></td>
+        </tr>
+        <tr>
+          <td>total geral R$</td>
+          <td class="text-right">1000</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="pull-right text-center print-signature">
+      __________________________________________________________<br/> assinatura
+    </div>
+  </div>
+  <button (click)="orcamentoPrint()" class="btn btn-block btn-primary btnPrint center-block" ><span class="glyphicon glyphicon-print"></span> imprimir</button>
 </div>
-<button (click)="orcamentoPrint()" class="btn btn-block btn-primary btnPrint center-block" ><span class="glyphicon glyphicon-print"></span> imprimir</button>

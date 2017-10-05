@@ -1,10 +1,10 @@
 export class Address {
-    private street: string;
-    private number: string;
-    private district: string;
-    private city: string;
-    private cep: string;
-    private state: string;
+    public street: string;
+    public number: string;
+    public district: string;
+    public city: string;
+    public cep: string;
+    public state: string;
 
     constructor(street: string, number: string, district: string, city: string, cep: string, state: string) {
         this.street = street;
